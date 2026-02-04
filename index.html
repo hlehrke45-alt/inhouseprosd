@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InHouse Pro SD | San Diego Home Remodeling Made Simple</title>
+    <meta name="description" content="Connect with San Diego's most trusted contractors. Secure escrow payments, verified credentials, and a seamless remodeling experience. Join the waitlist!">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --warm: #F5EFE6;
+            --sand: #EDE6DB;
+            --taupe: #E8E0D4;
+            --gold: #C9956B;
+            --gold-dark: #A67B4F;
+            --gold-light: #E8C9A0;
+            --terracotta: #C17F59;
+            --sage: #8B9A7E;
+            --text-dark: #2C2416;
+            --text-medium: #5C4D3C;
+            --text-muted: #8B7D6B;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .logo span {
+            color: var(--gold-dark);
+        }
+
+        .header-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--sage);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--warm) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--gold-light);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-decoration-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -150px;
+        }
+
+        .hero-decoration-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            border-color: var(--sage);
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: Georgia, serif;
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            border: none;
+            color: white;
+            box-shadow: 0 4px 15px rgba(201, 149, 107, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(201, 149, 107, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            border: 2px solid var(--sand);
+            color: var(--text-medium);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold-dark);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .stats-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            color: var(--gold-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 500;
+            margin-top: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--gold-dark);
+        }
+
+        .features-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-title {
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-light));
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 4px 15px rgba(201, 149, 107, 0.3);
+        }
+
+        .step-title {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .step-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+
+        /* Founder Story Section */
+        .story {
+            padding: 5rem 2rem;
+            background: var(--warm);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 40px rgba(201, 149, 107, 0.3);
+        }
+
+        .story-text h2 {
+            font-family: Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .story-text p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .story-signature {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: var(--gold-dark);
+            font-size: 1.1rem;
+        }
+
+        /* Waitlist Section */
+        .waitlist {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            text-align: center;
+        }
+
+        .waitlist-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .waitlist h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .waitlist p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .waitlist-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .waitlist .btn {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-white {
+            background: var(--white);
+            border: none;
+            color: var(--gold-dark);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .waitlist-note {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem 2rem;
+            background: var(--text-dark);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-text {
+            color: rgba(250,247,242,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(250,247,242,0.6);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: rgba(250,247,242,0.4);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-badge {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem 4rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.75rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .story-image {
+                width: 150px;
+                height: 150px;
+                font-size: 4rem;
+                margin: 0 auto;
+            }
+
+            .waitlist-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .waitlist .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">🏠</div>
+            InHouse Pro<span>SD</span>
+        </a>
+        <div class="header-badge">
+            <div class="header-badge-dot"></div>
+            Coming Soon to San Diego
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-decoration hero-decoration-1"></div>
+        <div class="hero-decoration hero-decoration-2"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Where Your Vision Meets <em>Exceptional</em> Craftsmanship
+            </h1>
+            <p class="hero-subtitle">
+                We're building a better way to connect San Diego homeowners with trusted local contractors. Secure payments, verified credentials, and a seamless remodeling experience.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-primary">
+                    🏠 I'm a Homeowner
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-secondary">
+                    🔧 I'm a Contractor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Contractors Ready</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">2.5%</div>
+                <div class="stat-label">Success Fee Only</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Payment Protected</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">SD</div>
+                <div class="stat-label">Local Focus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <span class="section-label">Why InHouse Pro</span>
+            <h2 class="section-title">Everything You Need for a <em>Perfect</em> Remodel</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3 class="feature-title">Vetted Contractors</h3>
+                <p class="feature-desc">Every contractor is thoroughly screened. Licenses verified, insurance confirmed, reviews validated.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure Escrow</h3>
+                <p class="feature-desc">Your money stays protected until you're satisfied. Milestone-based payments you control.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">Smart Estimates</h3>
+                <p class="feature-desc">AI-powered pricing based on real San Diego market data. Know what to expect before you start.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Easy Communication</h3>
+                <p class="feature-desc">Message contractors directly. All conversations, documents, and decisions in one place.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Progress Tracking</h3>
+                <p class="feature-desc">Watch your project come to life with real-time updates and photo documentation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3 class="feature-title">Trusted Reviews</h3>
+                <p class="feature-desc">Read honest feedback from real San Diego homeowners. Every review from a verified project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title">Your Remodel in <em>Four Simple Steps</em></h2>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Share Your Vision</h3>
+                <p class="step-desc">Tell us about your project and get instant estimates</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Compare Bids</h3>
+                <p class="step-desc">Receive proposals from verified local contractors</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Build with Confidence</h3>
+                <p class="step-desc">Hire & track progress with secure payments</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Love Your Space</h3>
+                <p class="step-desc">Move into your transformed home</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Story -->
+    <section class="story">
+        <div class="story-content">
+            <div class="story-image">👷</div>
+            <div class="story-text">
+                <h2>Built by a San Diego Native</h2>
+                <p>
+                    I grew up spending summers and weekends working alongside my father—learning tile, plumbing, and carrying a toolbelt before I could drive. I saw firsthand how hard it is for homeowners to find contractors they can trust, and how hard it is for honest tradespeople to find quality leads.
+                </p>
+                <p>
+                    That's why I built InHouse Pro. Not from a corporate boardroom, but from years of real experience in San Diego homes.
+                </p>
+                <p class="story-signature">— Founder, InHouse Pro SD</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist CTA -->
+    <section class="waitlist" id="waitlist">
+        <div class="waitlist-content">
+            <h2>Be the First to Know</h2>
+            <p>Join the waitlist and get early access when we launch in San Diego County.</p>
+            <div class="waitlist-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-white">
+                    🏠 Join as Homeowner
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-outline-white">
+                    🔧 Join as Contractor
+                </a>
+            </div>
+            <p class="waitlist-note">No spam, ever. Just updates on our San Diego launch.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">InHouse Pro<span>SD</span></div>
+        <p class="footer-text">Connecting San Diego homeowners with exceptional contractors.</p>
+        <p class="footer-location">🌴 Proudly based in San Diego, California</p>
+        <div class="footer-bottom">
+            <p>© 2025 InHouse Pro SD. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
