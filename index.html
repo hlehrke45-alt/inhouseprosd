@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InHouse Pro SD | San Diego Home Remodeling Made Simple</title>
     <meta name="description" content="Connect with San Diego's most trusted contractors. Secure escrow payments, verified credentials, and a seamless remodeling experience. Join the waitlist!">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="InHouse Pro SD | San Diego Home Remodeling Made Simple">
+    <meta property="og:description" content="Connect with San Diego's most trusted contractors. Secure escrow payments, verified credentials, and a seamless remodeling experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hlehrke45-alt.github.io/inhouseprosd/">
+    <meta property="og:image" content="https://hlehrke45-alt.github.io/inhouseprosd/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="InHouse Pro SD | San Diego Home Remodeling Made Simple">
+    <meta name="twitter:description" content="Connect with San Diego's most trusted contractors. Secure escrow payments, verified credentials, and a seamless remodeling experience.">
+
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -539,6 +561,273 @@
             color: rgba(250,247,242,0.4);
         }
 
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--cream);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Inline Email Form */
+        .inline-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 450px;
+            margin: 1.5rem auto 0;
+        }
+
+        .inline-form input[type="email"] {
+            flex: 1;
+            padding: 0.9rem 1.25rem;
+            border: 2px solid var(--sand);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+            background: var(--white);
+        }
+
+        .inline-form input[type="email"]:focus {
+            border-color: var(--gold);
+        }
+
+        .inline-form button {
+            padding: 0.9rem 1.5rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--terracotta) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .inline-form button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(201, 149, 107, 0.4);
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .form-success {
+            display: none;
+            color: var(--sage);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 3rem 2rem;
+            background: var(--warm);
+            text-align: center;
+        }
+
+        .social-proof-text {
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-proof-text strong {
+            color: var(--gold-dark);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            background: var(--white);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-dark);
+        }
+
+        .faq-icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 0 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        /* Waitlist inline form overrides */
+        .waitlist .inline-form input[type="email"] {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+
+        .waitlist .inline-form input[type="email"]::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .waitlist .inline-form input[type="email"]:focus {
+            border-color: white;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .waitlist .inline-form button {
+            background: var(--white);
+            color: var(--gold-dark);
+        }
+
+        .waitlist .form-note {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .waitlist .form-success {
+            color: white;
+        }
+
+        .form-divider {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            margin: 1rem 0;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             header {
@@ -547,6 +836,14 @@
 
             .header-badge {
                 display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .hero {
@@ -611,6 +908,14 @@
                 width: 100%;
                 max-width: 280px;
             }
+
+            .inline-form {
+                flex-direction: column;
+            }
+
+            .trust-badges {
+                gap: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -621,11 +926,29 @@
             <div class="logo-icon">🏠</div>
             InHouse Pro<span>SD</span>
         </a>
+        <nav class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#faq">FAQ</a>
+            <a href="#waitlist" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Join Waitlist</a>
+        </nav>
         <div class="header-badge">
             <div class="header-badge-dot"></div>
             Coming Soon to San Diego
         </div>
+        <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('active')" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="this.parentElement.classList.remove('active')" aria-label="Close menu">&times;</button>
+        <a href="#features" onclick="this.parentElement.classList.remove('active')">Features</a>
+        <a href="#how-it-works" onclick="this.parentElement.classList.remove('active')">How It Works</a>
+        <a href="#faq" onclick="this.parentElement.classList.remove('active')">FAQ</a>
+        <a href="#waitlist" onclick="this.parentElement.classList.remove('active')">Join Waitlist</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -639,12 +962,19 @@
             <p class="hero-subtitle">
                 We're building a better way to connect San Diego homeowners with trusted local contractors. Secure payments, verified credentials, and a seamless remodeling experience.
             </p>
-            <div class="cta-buttons">
+            <form class="inline-form" id="heroForm" onsubmit="handleFormSubmit(event, 'heroSuccess')">
+                <input type="email" placeholder="Enter your email to join the waitlist" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+            <p class="form-note">No spam, ever. Just launch updates.</p>
+            <p class="form-success" id="heroSuccess">You're on the list! We'll be in touch soon.</p>
+
+            <div class="cta-buttons" style="margin-top: 1.5rem;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-primary">
-                    🏠 I'm a Homeowner
+                    🏠 Homeowner Sign-Up
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-secondary">
-                    🔧 I'm a Contractor
+                <a href="#waitlist" class="btn btn-secondary">
+                    🔧 Contractor Sign-Up
                 </a>
             </div>
         </div>
@@ -672,8 +1002,19 @@
         </div>
     </section>
 
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <p class="social-proof-text">Join <strong>200+ San Diego homeowners and contractors</strong> already on the waitlist</p>
+        <div class="trust-badges">
+            <div class="trust-badge">🛡 Licensed</div>
+            <div class="trust-badge">📋 Insured</div>
+            <div class="trust-badge">✅ Background Checked</div>
+            <div class="trust-badge">⭐ Review Verified</div>
+        </div>
+    </section>
+
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="section-header">
             <span class="section-label">Why InHouse Pro</span>
             <h2 class="section-title">Everything You Need for a <em>Perfect</em> Remodel</h2>
@@ -714,7 +1055,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="section-header">
             <span class="section-label">How It Works</span>
             <h2 class="section-title">Your Remodel in <em>Four Simple Steps</em></h2>
@@ -761,22 +1102,125 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <span class="section-label">Questions</span>
+            <h2 class="section-title">Frequently <em>Asked</em></h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How much does InHouse Pro cost?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>InHouse Pro is free for homeowners. Contractors pay a small 2.5% success fee only when they win a project and get paid. No monthly fees, no listing fees, no hidden costs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What areas of San Diego do you serve?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We're launching across all of San Diego County including Downtown, North County, East County, and South Bay. From Oceanside to Chula Vista, we've got you covered.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    When are you launching?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We're currently in early access and building our contractor network. Join the waitlist to be first in line when we open to the public. Early members get priority access and exclusive perks.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How are contractors vetted?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Every contractor goes through a multi-step verification: active CSLB license check, insurance verification, background screening, and review of past project quality. Only contractors who pass all checks are listed.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Is my payment really protected?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. All payments go through our secure escrow system. Your money is held safely and only released to the contractor when you approve each milestone. If there's a dispute, our team mediates to protect both parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Waitlist CTA -->
     <section class="waitlist" id="waitlist">
         <div class="waitlist-content">
             <h2>Be the First to Know</h2>
             <p>Join the waitlist and get early access when we launch in San Diego County.</p>
+            <form class="inline-form" id="waitlistForm" onsubmit="handleFormSubmit(event, 'waitlistSuccess')">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+            <p class="form-note">No spam, ever. Just updates on our San Diego launch.</p>
+            <p class="form-success" id="waitlistSuccess">You're on the list! We'll be in touch soon.</p>
+            <p class="form-divider">or fill out our detailed form</p>
             <div class="waitlist-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-white">
-                    🏠 Join as Homeowner
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-outline-white" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">
+                    🏠 Homeowner Form
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-outline-white">
-                    🔧 Join as Contractor
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/viewform" target="_blank" class="btn btn-outline-white" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">
+                    🔧 Contractor Form
                 </a>
             </div>
-            <p class="waitlist-note">No spam, ever. Just updates on our San Diego launch.</p>
         </div>
     </section>
+
+    <!-- Scripts -->
+    <script>
+        function handleFormSubmit(event, successId) {
+            event.preventDefault();
+            var form = event.target;
+            var email = form.querySelector('input[type="email"]').value;
+            var successMsg = document.getElementById(successId);
+
+            // Send to Google Forms via hidden iframe
+            var googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/formResponse';
+            var formData = new FormData();
+            formData.append('entry.1045781291', email); // adjust field ID to match your form
+
+            fetch(googleFormUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            });
+
+            // Show success message and hide form
+            form.style.display = 'none';
+            form.nextElementSibling.style.display = 'none'; // hide form-note
+            successMsg.style.display = 'block';
+        }
+
+        function toggleFaq(button) {
+            var item = button.parentElement;
+            var isActive = item.classList.contains('active');
+
+            // Close all FAQ items
+            var allItems = document.querySelectorAll('.faq-item');
+            for (var i = 0; i < allItems.length; i++) {
+                allItems[i].classList.remove('active');
+            }
+
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -784,7 +1228,7 @@
         <p class="footer-text">Connecting San Diego homeowners with exceptional contractors.</p>
         <p class="footer-location">🌴 Proudly based in San Diego, California</p>
         <div class="footer-bottom">
-            <p>© 2025 InHouse Pro SD. All rights reserved.</p>
+            <p>© 2026 InHouse Pro SD. All rights reserved.</p>
         </div>
     </footer>
 </body>
