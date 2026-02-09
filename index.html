@@ -62,7 +62,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Tile texture overlay */
+        /* Crosshatch texture overlay */
         .tile-bg {
             position: relative;
             overflow: hidden;
@@ -72,13 +72,23 @@
             content: '';
             position: absolute;
             inset: 0;
-            opacity: 0.04;
+            opacity: 0.045;
             pointer-events: none;
             background-image:
-                linear-gradient(var(--taupe) 1px, transparent 1px),
-                linear-gradient(90deg, var(--taupe) 1px, transparent 1px),
-                linear-gradient(45deg, transparent 49.5%, var(--taupe) 49.5%, var(--taupe) 50.5%, transparent 50.5%);
-            background-size: 60px 60px, 60px 60px, 84.85px 84.85px;
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    var(--taupe) 10px,
+                    var(--taupe) 11px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    var(--taupe) 10px,
+                    var(--taupe) 11px
+                );
         }
 
         /* Scroll Animations */
