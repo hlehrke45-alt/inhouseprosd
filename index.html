@@ -31,19 +31,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #F8F7F4;
+            --bg-primary: #F5F0E6;
             --bg-white: #FFFFFF;
-            --bg-warm: #F2F0ED;
+            --bg-warm: #EDE8DC;
             --bg-dark: #1A1A1A;
             --text-heading: #1A1A1A;
             --text-body: #4A4A4A;
             --text-muted: #8A8A8A;
-            --accent: #2C2C2C;
-            --border: #E0DDD8;
+            --accent: #FF7435;
+            --border: #DDD8CC;
             --taupe: #B8A99A;
-            --terracotta: #C17F59;
-            --terracotta-dark: #A66B45;
-            --terracotta-light: #D4A07A;
+            --terracotta: #FF7435;
+            --terracotta-dark: #E5622A;
+            --terracotta-light: #FF9A6C;
         }
 
         * {
@@ -111,7 +111,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(248, 247, 244, 0.9);
+            background: rgba(245, 240, 230, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -132,6 +132,14 @@
             color: var(--text-heading);
             text-decoration: none;
             letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
         }
 
         .logo span {
@@ -255,7 +263,7 @@
             padding: 8rem 3rem 6rem;
             text-align: center;
             background:
-                linear-gradient(rgba(248, 247, 244, 0.88), rgba(248, 247, 244, 0.92)),
+                linear-gradient(rgba(245, 240, 230, 0.88), rgba(245, 240, 230, 0.92)),
                 url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80') center/cover no-repeat;
         }
 
@@ -278,8 +286,8 @@
             background: linear-gradient(
                 to bottom,
                 var(--bg-primary) 0%,
-                transparent 15%,
-                transparent 85%,
+                transparent 12%,
+                transparent 88%,
                 var(--bg-white) 100%
             );
         }
@@ -1016,6 +1024,7 @@
     <header>
         <div class="header-inner">
             <a href="#" class="logo">
+                <img src="crossover-orange-tan-500px.png" alt="InHouse Pro SD" class="logo-img">
                 InHouse Pro <span>SD</span>
             </a>
             <nav class="nav-links">
@@ -1326,7 +1335,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">InHouse Pro <span>SD</span></div>
+        <div class="footer-logo"><img src="crossover-orange-tan-500px.png" alt="InHouse Pro SD" style="height: 32px; width: auto; margin-bottom: 0.5rem;"><br>InHouse Pro <span>SD</span></div>
         <p class="footer-text">Connecting San Diego homeowners with exceptional contractors.</p>
         <p class="footer-location">Proudly based in San Diego, California</p>
         <div class="footer-bottom">
