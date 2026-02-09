@@ -1263,15 +1263,38 @@
             var successMsg = document.getElementById(successId);
 
             var googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSchUdr7FlJXjZ3LqQ6E84VT95vZNXFRgtK3dF5ttRxTSCwriw/formResponse';
-            var formData = new FormData();
-            formData.append('entry.1035046775', email);
-            formData.append('entry.1782717650', 'Homeowner (Looking for renovations)');
 
-            fetch(googleFormUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            });
+            // Submit via hidden iframe to avoid CORS issues
+            var iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe_' + Date.now();
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            var tempForm = document.createElement('form');
+            tempForm.method = 'POST';
+            tempForm.action = googleFormUrl;
+            tempForm.target = iframe.name;
+
+            // Email is collected via Google Forms' built-in email collection
+            var emailField = document.createElement('input');
+            emailField.name = 'emailAddress';
+            emailField.value = email;
+            tempForm.appendChild(emailField);
+
+            // Required: "I am a..." field
+            var typeField = document.createElement('input');
+            typeField.name = 'entry.2031910879';
+            typeField.value = 'Homeowner (Looking for renovations)';
+            tempForm.appendChild(typeField);
+
+            document.body.appendChild(tempForm);
+            tempForm.submit();
+
+            // Clean up after submission
+            setTimeout(function() {
+                document.body.removeChild(tempForm);
+                document.body.removeChild(iframe);
+            }, 3000);
 
             form.style.display = 'none';
             form.nextElementSibling.style.display = 'none';
