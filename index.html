@@ -62,6 +62,25 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Tile texture overlay */
+        .tile-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tile-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            pointer-events: none;
+            background-image:
+                linear-gradient(var(--taupe) 1px, transparent 1px),
+                linear-gradient(90deg, var(--taupe) 1px, transparent 1px),
+                linear-gradient(45deg, transparent 49.5%, var(--taupe) 49.5%, var(--taupe) 50.5%, transparent 50.5%);
+            background-size: 60px 60px, 60px 60px, 84.85px 84.85px;
+        }
+
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -972,7 +991,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero fade-in">
+    <section class="hero fade-in tile-bg">
         <div class="hero-content">
             <p class="hero-label">Coming Soon to San Diego</p>
             <h1 class="hero-title">
@@ -1033,7 +1052,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features tile-bg" id="features">
         <div class="section-header fade-in">
             <span class="section-label">Why InHouse Pro</span>
             <h2 class="section-title">Everything You Need for a <strong>Perfect</strong> Remodel</h2>
@@ -1074,7 +1093,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works tile-bg" id="how-it-works">
         <div class="section-header fade-in">
             <span class="section-label">How It Works</span>
             <h2 class="section-title">Your Remodel in <strong>Four Simple Steps</strong></h2>
@@ -1105,7 +1124,7 @@
     </section>
 
     <!-- Founder Story -->
-    <section class="story fade-in">
+    <section class="story fade-in tile-bg">
         <div class="story-content">
             <img src="founder.JPG" alt="Founder of InHouse Pro SD" class="story-image">
             <div class="story-text">
@@ -1122,7 +1141,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq" id="faq">
+    <section class="faq tile-bg" id="faq">
         <div class="section-header fade-in">
             <span class="section-label">Questions</span>
             <h2 class="section-title">Frequently <strong>Asked</strong></h2>
